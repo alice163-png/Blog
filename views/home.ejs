@@ -1,0 +1,16 @@
+<%- include("./partials/header.ejs") %>
+
+<h1>Home</h1>
+<p><%= content %></p>
+
+<% post.forEach((element, index) => { %>
+   <h1 id="postTitle"><%= element.title %></h1>
+   <p id="postContent"><%= element.content.substring(0, 100) %>...</p>
+   <%  var dynamicURL = "/post/" + element.title; %>
+   <a id="postLink" href="<%= dynamicURL %>">Read more</a> <!-- Unique ID using the loop index -->
+<% }); %>
+
+
+
+
+<%- include("./partials/footer.ejs") %>
